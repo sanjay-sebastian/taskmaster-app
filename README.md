@@ -48,3 +48,74 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+
+⚙️ Configuration
+
+The app supports environment-based configuration. Create a .env file or set these variables manually:
+
+Variable	Description	Default
+
+SECRET_KEY	Secret key for Flask sessions	asdf#FGSgvasgf$5$WGT
+DATABASE_URL	External DB URI (Postgres/MySQL)	Uses local SQLite
+PORT	Port to run the Flask server	5000
+
+
+
+---
+
+▶️ Running the App
+
+python main.py
+
+Visit http://localhost:5000 to access the app.
+
+If a frontend build (like React) is available in the static/ folder, it will be served directly.
+
+
+---
+
+🧪 API Endpoints
+
+The backend exposes API routes under /api:
+
+/api/users/... → Handled by user_bp
+
+/api/tasks/... → Handled by task_bp
+
+
+(API documentation can be added later using Swagger/OpenAPI.)
+
+
+---
+
+🗃️ Project Structure
+
+taskmaster-app/
+│
+├── main.py                # Entry point
+├── requirements.txt       # Dependencies
+├── static/                # Frontend build (optional)
+├── database/              # SQLite DB (if used)
+└── src/
+    ├── models/
+    │   ├── user.py
+    │   └── task.py
+    └── routes/
+        ├── user.py
+        └── task.py
+
+
+---
+
+📄 License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+
+---
+
+👨‍💻 Author
+
+Sanjay Sebastian
+GitHub: @sanjay-sebastian
